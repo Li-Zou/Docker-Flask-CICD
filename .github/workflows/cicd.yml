@@ -9,7 +9,7 @@ on:
 jobs:
   # 1. Run unit tests (depends on requirements.txt)  跑单元测试 (依赖 requirements.txt)
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
