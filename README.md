@@ -39,6 +39,7 @@ docker run -p 5000:5000 zoey12321/flasktest-app:latest
 
 ## Project structure
 
+```text
 learning_git/
 ├── .github/workflows/    # GitHub Actions CI/CD configuration files
 │   └── cicd.yml
@@ -50,6 +51,7 @@ learning_git/
 ├── Dockerfile            # Docker image build file
 ├── .dockerignore         # Docker ignore configuration
 └── README.md             # Project documentation
+```
 
 
 ## Learning sources
@@ -102,17 +104,19 @@ docker run -p 5000:5000 zoey12321/flasktest-app:latest
 
 ## 项目结构
 
+```text
 learning_git/
-├── .github/workflows/    # GitHub Actions CI/CD 配置文件
+├── .github/workflows/    # GitHub Actions CI/CD configuration files
 │   └── cicd.yml
-├── templates/            # 前端 HTML 模板
+├── templates/            # Frontend HTML templates
 │   └── index.html
-├── app.py                # Flask 后端核心逻辑
-├── test_app.py           # Pytest 单元测试代码
-├── requirements.txt      # Python 依赖包清单
-├── Dockerfile            # Docker 镜像构建文件
-├── .dockerignore         # Docker 忽略文件配置
-└── README.md             # 项目说明文档
+├── app.py                # Flask backend core logic
+├── test_app.py           # Pytest unit tests
+├── requirements.txt      # Python dependency list
+├── Dockerfile            # Docker image build file
+├── .dockerignore         # Docker ignore configuration
+└── README.md             # Project documentation
+```
 
 ## 学习资源
 
