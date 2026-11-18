@@ -122,7 +122,7 @@ git push -u origin main
 ```
 
 ## Step 5: Run Anywhere via Docker Hub
-Every time you make local modifications (e.g., adding the CI/CD YAML file), push the changes to GitHub:
+Once the deployment pipeline is complete and the image is pushed to Docker Hub, any computer with Docker installed can run this app:
 
 ```bash
 docker run -p 5000:5000 zoey12321/flasktest-app:latest
