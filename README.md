@@ -34,7 +34,9 @@ A full-stack web calculator application built with Python and Flask. This projec
 ### Option 1: Run directly with Docker (Recommended)
 If you have Docker installed, you can start this application with a single command (in bash):
 
+```text
 docker run -p 5000:5000 zoey12321/flasktest-app:latest
+```
 
 
 ## Project structure
@@ -59,6 +61,7 @@ learning_git/
 https://www.youtube.com/watch?v=9oALxmc5yEw
 
 https://github.com/krishnaik06/dockerimagehub
+
 
 --------------------------------------------------------------------------------
 
@@ -99,8 +102,9 @@ https://github.com/krishnaik06/dockerimagehub
 ### 方式一：直接使用 Docker 运行（推荐）
 如果你安装了 Docker，只需一行命令即可启动此应用 (in bash)：
 
+```text
 docker run -p 5000:5000 zoey12321/flasktest-app:latest
-
+```
 
 ## 项目结构
 
@@ -121,4 +125,5 @@ learning_git/
 ## 学习资源
 
 https://www.youtube.com/watch?v=9oALxmc5yEw
+
 https://github.com/krishnaik06/dockerimagehub
