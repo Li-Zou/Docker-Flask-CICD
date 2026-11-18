@@ -7,58 +7,57 @@ on:
     branches: [ main ]
 
 jobs:
-  dockerbuild:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build The Docker Image
-      run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
+  # 1. Run unit tests (depends on requirements.txt)  跑单元测试 (依赖 requirements.txt)
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flask
-        pip install pytest
+        pip install -r requirements.txt
 
     - name: Run tests
       run: |
         pytest
 
-  build-and-publish:
-    needs: build-and-test
+  # 2. Verify that the Docker image can be built successfully (without pushing), 验证 Docker 镜像能否成功构建 (不推送)
+  dockerbuild:
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build The Docker Image
+      run: docker build . --file Dockerfile --tag workflow-test:$(date +%s)
 
+  # 3. Publish to Docker Hub (executed only if tests pass and the build is successful) 发布到 Docker Hub (只有测试通过且构建成功才会执行)
+  build-and-publish:
+    needs: [build-and-test, dockerbuild] # Both of the first two jobs must succeed.   需要前两个 job 都成功
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
 
     - name: Login to DockerHub
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push Docker image
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./DockerFile
+        file: ./Dockerfile 
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flasktest-app:latest
-
-    - name: Image digest
-      run: echo ${{ steps.build-and-publish.outputs.digest }}
