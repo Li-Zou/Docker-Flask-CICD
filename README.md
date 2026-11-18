@@ -1,7 +1,7 @@
 ## Full-Stack Flask Calculator with Automated CI/CD 
 
 
-
+# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 1
 # 🧮 Flask Calculator App
 
 ![Flask CI/CD](https://github.com/Li-Zou/Docker-Flask-CICD/actions/workflows/cicd.yml/badge.svg)
@@ -63,7 +63,83 @@ https://www.youtube.com/watch?v=9oALxmc5yEw
 https://github.com/krishnaik06/dockerimagehub
 
 
---------------------------------------------------------------------------------
+
+
+
+# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 2
+# 🚀 Full Workflow: Local Development → Git → Docker
+
+This guide covers the complete lifecycle of the project: from running it locally, pushing to GitHub, and finally running it anywhere using Docker.
+
+## Step 1: Prepare Files Locally
+Set up the standard project structure with all necessary files (Flask app, tests, requirements, Dockerfile, etc.) as outlined in the Project Structure section.
+
+![Calculator Screenshot](./images/files.png)
+
+## Step 2: Run & Test Locally
+Open a terminal in the project directory and execute the following commands to set up the environment, install dependencies, and start the app:
+
+```powershell
+# Check Python version
+py --version
+
+# Create and activate virtual environment
+py -m venv venv
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\venv\Scripts\Activate.ps1
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask app
+python app.py
+
+```
+## Step 3: Initialize Git & Push to GitHub
+Initialize a local Git repository and push the code to your GitHub remote repository
+
+```bash
+git init
+git add .
+git commit -m 'This is 1st commit'
+git branch -M main
+git remote add origin https://github.com/Li-Zou/Docker-Flask-CICD.git
+git push -u origin main
+
+```
+
+## Step 4: Push Subsequent Updates
+Every time you make local modifications (e.g., adding the CI/CD YAML file), push the changes to GitHub:
+
+```bash
+git add .
+git commit -m 'Docker CICD yaml file ready'
+git push -u origin main
+
+```
+
+## Step 5: Run Anywhere via Docker Hub
+Every time you make local modifications (e.g., adding the CI/CD YAML file), push the changes to GitHub:
+
+```bash
+docker run -p 5000:5000 zoey12321/flasktest-app:latest
+
+```
+
+👉 Access the app: Open your browser and go to http://localhost:5000
+
+
+
+
+
+
+
+
+
+
+
+
+# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 3 Chinese
 
 # 🧮 Flask Calculator App
 
