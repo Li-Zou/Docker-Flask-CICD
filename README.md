@@ -1,7 +1,8 @@
 ## Full-Stack Flask Calculator with Automated CI/CD 
 
-
-# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 1
+---
+# 🚀🚀🚀🚀  Part 1  🚀🚀🚀🚀
+---
 # 🧮 Flask Calculator App
 
 ![Flask CI/CD](https://github.com/Li-Zou/Docker-Flask-CICD/actions/workflows/cicd.yml/badge.svg)
@@ -66,7 +67,9 @@ https://github.com/krishnaik06/dockerimagehub
 
 
 
-# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 2
+---
+# 🚀🚀🚀🚀  Part 2  🚀🚀🚀🚀
+---
 # 🚀 Full Workflow: Local Development → Git → Docker
 
 This guide covers the complete lifecycle of the project: from running it locally, pushing to GitHub, and finally running it anywhere using Docker.
@@ -125,21 +128,13 @@ Every time you make local modifications (e.g., adding the CI/CD YAML file), push
 docker run -p 5000:5000 zoey12321/flasktest-app:latest
 
 ```
-
 👉 Access the app: Open your browser and go to http://localhost:5000
 
 
 
-
-
-
-
-
-
-
-
-
-# 🚀🚀🚀🚀🚀🚀🚀🚀 Part 3 Chinese
+---
+# 🚀🚀🚀🚀  Part 3  🚀🚀🚀🚀
+---
 
 # 🧮 Flask Calculator App
 
